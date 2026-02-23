@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI每日情报 - 2026年2月23日</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #08090d;
+            --surface: #0f1117;
+            --surface2: #161820;
+            --border: #1e2030;
+            --meta-purple: #a78bfa;
+            --anchor-blue: #60a5fa;
+            --green: #22c55e;
+            --signal-teal: #2dd4bf;
+            --invest-deepblue: #3b82f6;
+            --edu-skyblue: #38bdf8;
+            --video-lavender: #c084fc;
+            --pink: #f472b6;
+            --red: #f87171;
+            --text: #d4d8e8;
+            --text-dim: #8b95a8;
+            --text-muted: #4b5563;
+            --startup-blue: #60a5fa;
+            --stock-green: #22c55e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 0;
+        }
+
+        .header-badge {
+            display: inline-block;
+            font-size: 10px;
+            padding: 6px 16px;
+            border: 1px solid rgba(96, 165, 250, 0.4);
+            border-radius: 24px;
+            color: #a5b4fc;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #667eea, #764ba2, #a78bfa, #60a5fa, #3b82f6);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientFlow 4s linear infinite;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .header-meta {
+            font-size: 15px;
+            color: #a5b4fc;
+            opacity: 0.75;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 24px 28px;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: background 0.3s;
+        }
+
+        .section-header:hover {
+            background: var(--surface2);
+        }
+
+        .section-header::after {
+            content: '▼';
+            margin-left: auto;
+            transition: transform 0.3s;
+            font-size: 14px;
+        }
+
+        .section.collapsed .section-header::after {
+            transform: rotate(-90deg);
+        }
+
+        .section.collapsed .section-body {
+            display: none;
+        }
+
+        .section-icon {
+            font-size: 28px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.6;
+            margin-bottom: 4px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .section-body {
+            padding: 0 28px 28px;
+        }
+
+        .s-gold .section-header { color: var(--meta-purple); }
+        .s-amber .section-header { color: var(--anchor-blue); }
+        .s-green .section-header { color: var(--green); }
+        .s-purple .section-header { color: var(--signal-teal); }
+        .s-orange .section-header { color: var(--invest-deepblue); }
+        .s-blue .section-header { color: var(--edu-skyblue); }
+        .s-teal .section-header { color: var(--video-lavender); }
+        .s-pink .section-header { color: var(--pink); }
+
+        .news-card {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .news-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .news-title a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .news-title a:hover {
+            border-color: currentColor;
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        .fact-col {
+            display: flex;
+            gap: 16px;
+        }
+
+        .fact-row {
+            flex: 1;
+        }
+
+        .fact-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.5;
+            margin-bottom: 8px;
+        }
+
+        .fact-content {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-dim);
+        }
+
+        .impact-sidebar {
+            background: rgba(96, 165, 250, 0.05);
+            border-left: 3px solid var(--anchor-blue);
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .impact-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--anchor-blue);
+            margin-bottom: 8px;
+        }
+
+        .impact-content {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-dim);
+        }
+
+        .collapsible {
+            margin-top: 16px;
+        }
+
+        .collapsible-header {
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .collapsible-header::after {
+            content: '▼';
+            margin-left: auto;
+            font-size: 12px;
+            transition: transform 0.3s;
+        }
+
+        .collapsible.active .collapsible-header::after {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            display: none;
+            padding: 14px 17px;
+            border-radius: 0 0 8px 8px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #9ca3af;
+            margin-top: 8px;
+        }
+
+        .collapsible.active .collapsible-content {
+            display: block;
+        }
+
+        .collapsible-startup .collapsible-header {
+            color: var(--startup-blue);
+            border: 2px solid rgba(96, 165, 250, 0.4);
+            background: var(--surface2);
+        }
+
+        .collapsible-startup .collapsible-content {
+            border: 2px solid rgba(96, 165, 250, 0.4);
+            background: var(--surface2);
+        }
+
+        .collapsible-stock .collapsible-header {
+            color: var(--stock-green);
+            border: 2px solid rgba(34, 197, 94, 0.4);
+            background: var(--surface2);
+        }
+
+        .collapsible-stock .collapsible-content {
+            border: 2px solid rgba(34, 197, 94, 0.4);
+            background: var(--surface2);
+        }
+
+        .us-stock-block {
+            background: rgba(34, 197, 94, 0.04);
+            border: 1px solid rgba(34, 197, 94, 0.18);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .us-stock-ticker {
+            color: var(--stock-green);
+            background: rgba(34, 197, 94, 0.08);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .astock-block {
+            background: rgba(34, 197, 94, 0.04);
+            border: 1px solid rgba(34, 197, 94, 0.18);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .astock-name {
+            color: #4ade80;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .score-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .score-label {
+            width: 100px;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .score-bar-container {
+            flex: 1;
+            height: 8px;
+            background: var(--surface);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .score-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--stock-green), #4ade80);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .score-value {
+            width: 40px;
+            text-align: right;
+            font-weight: 600;
+            color: var(--stock-green);
+        }
+
+        .overall-score {
+            text-align: center;
+            padding: 16px;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 8px;
+            margin-top: 12px;
+        }
+
+        .overall-score-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--stock-green);
+        }
+
+        .overall-score-label {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+
+        .meta-insight-content {
+            padding: 8px 0;
+        }
+
+        .trend-item {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trend-item:last-child {
+            border-bottom: none;
+        }
+
+        .trend-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--meta-purple);
+        }
+
+        .trend-desc {
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+
+        .risk-item {
+            padding: 16px;
+            background: rgba(248, 113, 113, 0.1);
+            border-left: 3px solid var(--red);
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-summary {
+            text-align: center;
+            margin-top: 24px;
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        .bottom-bar {
+            margin-top: 40px;
+            padding: 24px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            position: relative;
+        }
+
+        .bottom-bar p {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .watermark {
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 48px;
+            font-weight: 900;
+            opacity: 0.03;
+            letter-spacing: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 48px;
+            }
+            .fact-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">LIVE · AI INTELLIGENCE DAILY</div>
+            <h1><span class="gradient-text">AI每日情报</span></h1>
+            <div class="header-meta">
+                <span>2026.2.23</span>
+                <span>实时抓取</span>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="section s-gold">
+                <div class="section-header">
+                    <div class="section-icon">💡</div>
+                    <div>
+                        <div class="section-label">META_INSIGHT</div>
+                        <div class="section-title">元洞察</div>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <div class="meta-insight-content">
+                        <div class="trend-item">
+                            <div class="trend-title">趋势一：AI产业从狂热扩张走向理性竞争</div>
+                            <div class="trend-desc">OpenAI大幅下调2030年算力支出目标从1.4万亿美元至6000亿美元，同时正敲定超千亿美元融资，估值或达7300亿美元。这一收一放之间，显示AI行业正从技术炫技转向商业化兑现。</div>
+                        </div>
+                        <div class="trend-item">
+                            <div class="trend-title">趋势二：智能体(Agent)成为兵家必争之地</div>
+                            <div class="trend-desc">技术路线从单纯的模型性能比拼，全面转向智能体应用。GPT-5.3 Codex和Opus 4.6的发布标志着AI从"工具"到"自主合作者"的质变，16个AI智能体仅用两周就完成10万行C编译器开发。</div>
+                        </div>
+                        <div class="trend-item">
+                            <div class="trend-title">趋势三：头部AI公司密集筹备IPO</div>
+                            <div class="trend-desc">OpenAI正与顶级律所洽谈IPO准备，Anthropic上月聘请律所协助上市，SpaceX已面试并准备确定牵头IPO的银行。三家公司估值均处历史高位：Anthropic约3500亿美元，OpenAI约5000亿美元，SpaceX约8000亿美元。</div>
+                        </div>
+                        <div class="trend-item">
+                            <div class="trend-title">趋势四：企业级AI市场爆发式增长</div>
+                            <div class="trend-desc">企业级AI市场规模两年内从17亿美元跃升至370亿美元，较去年增长约3.2倍。医疗行业吸纳了几乎一半的垂直AI支出，约15亿美元，较上一年增长超过三倍。</div>
+                        </div>
+
+                        <div class="trend-item">
+                            <div class="trend-title">跨板块关联分析</div>
+                            <div class="trend-desc">
+                                头部公司IPO筹备 → 资本更加关注商业化指标 → 企业级AI市场加速增长 → 推动智能体应用落地 → 进一步验证技术价值
+                                <br><br>
+                                这一闭环正在形成，2026年将是AI从"技术驱动"转向"商业驱动"的关键之年。
+                            </div>
+                        </div>
+
+                        <div class="trend-item">
+                            <div class="trend-title">创业方向建议</div>
+                            <div class="trend-desc">
+                                <strong>短期（3-6个月）：</strong>垂直领域智能体应用，特别是医疗、法律、教育等专业领域<br>
+                                <strong>中期（6-18个月）：</strong>智能体协作平台，支持多Agent协同工作<br>
+                                <strong>长期（18个月以上）：</strong>全新的Git兼容数据库，专为智能体设计的代码管理系统
+                            </div>
+                        </div>
+
+                        <div class="risk-item">
+                            <div style="font-weight: 600; color: var(--red); margin-bottom: 8px;">风险预警</div>
+                            <div style="color: var(--text-dim);">AI投资逻辑已从"拼参数"转向"看落地"，无法兑现商业化指标的公司可能面临估值杀。同时，大量"为AI而AI"的产品正在透支市场对AI技术的信任。</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section s-amber">
+                <div class="section-header">
+                    <div class="section-icon">⚓</div>
+                    <div>
+                        <div class="section-label">STRATEGIC_ANCHOR</div>
+                        <div class="section-title">战略锚点</div>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <div class="news-card">
+                        <div class="news-title">
+                            <a href="http://m.toutiao.com/group/7595377515766563371/" target="_blank">OpenAI、Anthropic、SpaceX密集筹备IPO，AI产业迎来资本化里程碑</a>
+                        </div>
+                        <div class="fact-grid">
+                            <div class="fact-col">
+                                <div class="fact-row">
+                                    <div class="fact-label">What</div>
+                                    <div class="fact-content">OpenAI正与Cooley等顶级律所洽谈IPO准备；Anthropic上月聘请Wilson Sonsini协助上市；SpaceX已面试并准备确定牵头IPO银行，计划未来12个月内上市。三家公司估值均处历史高位。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">How</div>
+                                    <div class="fact-content">通过聘请顶级律所和投行，三家公司正在有条不紊地推进IPO流程。OpenAI同时在敲定超千亿美元融资，投前估值或达7300亿美元；Anthropic融资磋商估值达3500亿美元；SpaceX最新估值8000亿美元。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">Why</div>
+                                    <div class="fact-content">AI产业正从技术扩张期进入商业化兑现期，公开上市是实现资本退出、建立更透明治理结构、获取更大发展资金的关键一步。同时，市场对AI公司的估值逻辑已从"技术想象力"转向"指标兑现力"。</div>
+                                </div>
+                            </div>
+                            <div class="impact-sidebar">
+                                <div class="impact-label">影响与行动</div>
+                                <div class="impact-content">
+                                    这标志着AI产业正式进入资本化成熟期。对创业者而言，头部公司上市将带动整个AI生态的融资环境；对投资者而言，需要更加关注公司的商业化指标而非单纯的技术故事。
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collapsible collapsible-startup">
+                            <div class="collapsible-header">💡 创业灵感</div>
+                            <div class="collapsible-content">
+                                <div style="margin-bottom: 12px;"><strong>做什么：</strong>AI公司IPO咨询服务平台</div>
+                                <div style="margin-bottom: 12px;"><strong>切入点：</strong>为AI创业公司提供从融资到上市的全流程咨询，重点帮助建立可量化的商业化指标体系</div>
+                                <div><strong>为什么现在：</strong>头部公司IPO将引发示范效应，大量AI公司将在未来2-3年启动上市准备，市场需求巨大</div>
+                            </div>
+                        </div>
+
+                        <div class="collapsible collapsible-stock">
+                            <div class="collapsible-header">📈 股票联动</div>
+                            <div class="collapsible-content">
+                                <div class="us-stock-block">
+                                    <div class="us-stock-ticker">NVDA</div>
+                                    <div style="color: var(--text-dim); font-size: 14px;">英伟达 - AI算力核心供应商</div>
+                                </div>
+                                <div class="us-stock-block">
+                                    <div class="us-stock-ticker">MSFT</div>
+                                    <div style="color: var(--text-dim); font-size: 14px;">微软 - OpenAI主要投资方</div>
+                                </div>
+                                <div class="us-stock-block">
+                                    <div class="us-stock-ticker">AMZN</div>
+                                    <div style="color: var(--text-dim); font-size: 14px;">亚马逊 - OpenAI战略投资者</div>
+                                </div>
+
+                                <div class="astock-block">
+                                    <div class="astock-name">【A股强关联标的】</div>
+                                    
+                                    <div class="overall-score">
+                                        <div class="overall-score-value">4.2</div>
+                                        <div class="overall-score-label">综合评分</div>
+                                    </div>
+
+                                    <div class="score-bar">
+                                        <div class="score-label">Logic</div>
+                                        <div class="score-bar-container">
+                                            <div class="score-bar-fill" style="width: 100%;"></div>
+                                        </div>
+                                        <div class="score-value">5.0</div>
+                                    </div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px; margin-left: 100px;">直接受益1步因果：AI公司上市将带动算力需求</div>
+
+                                    <div class="score-bar">
+                                        <div class="score-label">Timing</div>
+                                        <div class="score-bar-container">
+                                            <div class="score-bar-fill" style="width: 80%;"></div>
+                                        </div>
+                                        <div class="score-value">4.0</div>
+                                    </div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px; margin-left: 100px;"><24h未完全反应，市场仍在消化</div>
+
+                                    <div class="score-bar">
+                                        <div class="score-label">Certainty</div>
+                                        <div class="score-bar-container">
+                                            <div class="score-bar-fill" style="width: 80%;"></div>
+                                        </div>
+                                        <div class="score-value">4.0</div>
+                                    </div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px; margin-left: 100px;">趋势明确，落地时间6-12个月</div>
+
+                                    <div class="score-bar">
+                                        <div class="score-label">Position</div>
+                                        <div class="score-bar-container">
+                                            <div class="score-bar-fill" style="width: 60%;"></div>
+                                        </div>
+                                        <div class="score-value">3.0</div>
+                                    </div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px; margin-left: 100px;">头部市场份额，但非垄断</div>
+
+                                    <div class="score-bar">
+                                        <div class="score-label">Linkage</div>
+                                        <div class="score-bar-container">
+                                            <div class="score-bar-fill" style="width: 80%;"></div>
+                                        </div>
+                                        <div class="score-value">4.0</div>
+                                    </div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-left: 100px;">同赛道验证需求，上下游订单确定性增加</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section s-green">
+                <div class="section-header">
+                    <div class="section-icon">📦</div>
+                    <div>
+                        <div class="section-label">PRODUCT_INTELLIGENCE</div>
+                        <div class="section-title">产品情报</div>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <div class="news-card">
+                        <div class="news-title">
+                            <a href="http://m.toutiao.com/group/7609503003619426843/" target="_blank">GPT-5.3 Codex与Opus 4.6同日发布：AI从工具到自主合作者的质变</a>
+                        </div>
+                        <div class="fact-grid">
+                            <div class="fact-col">
+                                <div class="fact-row">
+                                    <div class="fact-label">What</div>
+                                    <div class="fact-content">2026年2月5日，OpenAI发布GPT-5.3 Codex，能独立写完几万行代码、自主测试App、修补漏洞；Anthropic同日发布Opus 4.6，坐拥百万级上下文，能自主发现代码隐患。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">How</div>
+                                    <div class="fact-content">演示显示，16个AI智能体仅用两周就完成10万行C编译器开发。用户只需说清需求，AI就能埋头干活，咖啡功夫就完美交付。这标志着智能体协作时代的到来。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">Why</div>
+                                    <div class="fact-content">大语言模型正在从"增强人类能力"向"替代人类执行"转变。随着模型能力的指数级提升，AI已经具备了作为"自主合作者"的能力，这将彻底改变软件开发的生产模式。</div>
+                                </div>
+                            </div>
+                            <div class="impact-sidebar">
+                                <div class="impact-label">影响与行动</div>
+                                <div class="impact-content">
+                                    软件开发效率将提升10-100倍。开发者需要从"写代码"转向"设计系统和监督AI"。
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collapsible collapsible-startup">
+                            <div class="collapsible-header">💡 创业灵感</div>
+                            <div class="collapsible-content">
+                                <div style="margin-bottom: 12px;"><strong>做什么：</strong>智能体协作平台</div>
+                                <div style="margin-bottom: 12px;"><strong>切入点：</strong>允许用户创建、编排和监控多个AI智能体协同工作，支持复杂项目开发</div>
+                                <div><strong>为什么现在：</strong>GPT-5.3和Opus 4.6已验证技术可行性，市场空白巨大</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-title">
+                            <a href="https://www.infoq.cn/article/fcjA0034GUQVp20cjHZU" target="_blank">前GitHub CEO创办Entire，获6000万美元种子轮，打造智能编码时代的开源开发者平台</a>
+                        </div>
+                        <div class="fact-grid">
+                            <div class="fact-col">
+                                <div class="fact-row">
+                                    <div class="fact-label">What</div>
+                                    <div class="fact-content">前GitHub CEO Thomas Dohmke创办Entire，一个面向"智能编码时代"的开源开发者平台。获6000万美元种子轮融资，估值3亿美元。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">How</div>
+                                    <div class="fact-content">构建三层平台：基础是全新Git兼容数据库，中间是语义推理层，最上面是用户界面。允许人类和智能体不仅查询代码，还能查询代码背后的逻辑。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">Why</div>
+                                    <div class="fact-content">智能体使用代码库的频率可能远超人类，传统Git仓库已无法满足需求。需要新的数据库层来存储智能体推理过程和上下文信息。</div>
+                                </div>
+                            </div>
+                            <div class="impact-sidebar">
+                                <div class="impact-label">影响与行动</div>
+                                <div class="impact-content">
+                                    代码管理系统将迎来新一轮革新。开发者应该关注智能体友好的开发工具。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section s-purple">
+                <div class="section-header">
+                    <div class="section-icon">📡</div>
+                    <div>
+                        <div class="section-label">INDUSTRY_SIGNALS</div>
+                        <div class="section-title">行业信号</div>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <div class="news-card">
+                        <div class="news-title">
+                            <a href="http://m.toutiao.com/group/7609689125922390528/" target="_blank">2026年AI投资转向商业化兑现，资本从"算力军备赛"转向"指标兑现力"</a>
+                        </div>
+                        <div class="fact-grid">
+                            <div class="fact-col">
+                                <div class="fact-row">
+                                    <div class="fact-label">What</div>
+                                    <div class="fact-content">2026年马年春节后，AI赛道迎来关键转折。全球资本从"算力军备赛"转向"商业化兑现期"，港股AI应用节后大涨，A股科技主线切换。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">How</div>
+                                    <div class="fact-content">机构普遍提示，AI板块呈现明显K型分化：能兑现AI投资关键指标的公司持续获资金追捧，指标不达标、只讲故事的标的遭遇估值杀。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">Why</div>
+                                    <div class="fact-content">2026年被业内称为"AI算账元年"，全球AI支出预计突破2.5万亿美元，产业从底层基建扩张转向全场景价值变现。头部企业的估值逻辑已从"技术想象力"变为"指标兑现力"。</div>
+                                </div>
+                            </div>
+                            <div class="impact-sidebar">
+                                <div class="impact-label">影响与行动</div>
+                                <div class="impact-content">
+                                    创业公司需要更加注重营收增长和毛利率，而非单纯的用户规模。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section s-orange">
+                <div class="section-header">
+                    <div class="section-icon">💰</div>
+                    <div>
+                        <div class="section-label">INVESTMENT_INTELLIGENCE</div>
+                        <div class="section-title">投融资情报</div>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <div class="news-card">
+                        <div class="news-title">
+                            <a href="http://m.toutiao.com/group/7610018996397654563/" target="_blank">OpenAI敲定超千亿美元融资，估值或达7300亿美元，英伟达、软银、亚马逊争相入局</a>
+                        </div>
+                        <div class="fact-grid">
+                            <div class="fact-col">
+                                <div class="fact-row">
+                                    <div class="fact-label">公司+轮次+金额+投资方</div>
+                                    <div class="fact-content">OpenAI，新一轮融资，超1000亿美元，投资方包括英伟达(NVDA)、软银、亚马逊(AMZN)等战略投资者，投前估值或达7300亿美元。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">主营业务</div>
+                                    <div class="fact-content">全球AI领域领军企业，提供GPT系列大模型、ChatGPT消费级产品、企业级API服务。2025年营收或达131亿美元，高于100亿美元目标。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">融资背后的行业信号</div>
+                                    <div class="fact-content">OpenAI同时大幅下调2030年算力支出目标从1.4万亿美元至6000亿美元，将基础设施投资更紧密地与预期收入挂钩。预计2030年总营收将超过2800亿美元。</div>
+                                </div>
+                            </div>
+                            <div class="impact-sidebar">
+                                <div class="impact-label">对创业者的启示</div>
+                                <div class="impact-content">
+                                    资本仍然看好AI，但更加理性。创业公司需要证明清晰的商业模式和营收路径。
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collapsible collapsible-stock">
+                            <div class="collapsible-header">📈 股票联动</div>
+                            <div class="collapsible-content">
+                                <div class="us-stock-block">
+                                    <div class="us-stock-ticker">NVDA</div>
+                                    <div style="color: var(--text-dim); font-size: 14px;">英伟达 - OpenAI主要算力供应商</div>
+                                </div>
+                                <div class="us-stock-block">
+                                    <div class="us-stock-ticker">AMZN</div>
+                                    <div style="color: var(--text-dim); font-size: 14px;">亚马逊 - 战略投资方</div>
+                                </div>
+                                <div class="us-stock-block">
+                                    <div class="us-stock-ticker">MSFT</div>
+                                    <div style="color: var(--text-dim); font-size: 14px;">微软 - 主要投资方</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-title">
+                            <a href="http://m.toutiao.com/group/7585630072741118498/" target="_blank">企业级AI市场两年增长3.2倍，达370亿美元，初创公司占据应用层63%市场份额</a>
+                        </div>
+                        <div class="fact-grid">
+                            <div class="fact-col">
+                                <div class="fact-row">
+                                    <div class="fact-label">市场数据</div>
+                                    <div class="fact-content">Menlo Ventures调研显示，企业级AI市场规模两年内从17亿美元跃升至370亿美元，较去年增长约3.2倍。2025年AI应用和infra分别获得190亿和180亿美元支出。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">竞争格局</div>
+                                    <div class="fact-content">应用层初创公司占据63%市场份额；infra层传统巨头占据56%市场份额。医疗行业吸纳了几乎一半的垂直AI支出，约15亿美元，较上一年增长超过三倍。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">转化效率</div>
+                                    <div class="fact-content">一旦企业开始评估某项AI解决方案，47%的AI交易最终会进入生产环境，而传统SaaS的这一比例仅为25%。所有AI应用支出中，27%来自PLG模式，约为传统软件(7%)的4倍。</div>
+                                </div>
+                            </div>
+                            <div class="impact-sidebar">
+                                <div class="impact-label">对创业者的启示</div>
+                                <div class="impact-content">
+                                    垂直AI领域（特别是医疗）机会巨大，PLG模式在AI领域更有效。
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collapsible collapsible-startup">
+                            <div class="collapsible-header">💡 创业灵感</div>
+                            <div class="collapsible-content">
+                                <div style="margin-bottom: 12px;"><strong>做什么：</strong>垂直AI医疗应用</div>
+                                <div style="margin-bottom: 12px;"><strong>切入点：</strong>医疗AI应用，采用PLG模式快速获客</div>
+                                <div><strong>为什么现在：</strong>医疗AI支出增长最快，市场教育已完成</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section s-blue">
+                <div class="section-header">
+                    <div class="section-icon">🎓</div>
+                    <div>
+                        <div class="section-label">EDUCATION_INTELLIGENCE</div>
+                        <div class="section-title">教育赛道情报</div>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <div class="news-card">
+                        <div class="news-title">
+                            <a href="http://m.toutiao.com/group/7608380184730911273/" target="_blank">DeepLearning.ai推出大模型应用实战课程，Andrew Ng教授亲授</a>
+                        </div>
+                        <div class="fact-grid">
+                            <div class="fact-col">
+                                <div class="fact-row">
+                                    <div class="fact-label">What</div>
+                                    <div class="fact-content">Andrew Ng教授推出最新大模型应用实战课程，帮助开发者快速掌握AI应用开发技能。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">How</div>
+                                    <div class="fact-content">通过Cursor、ElevenLabs、Open Evidence等前沿案例，具象化展示AI落地知识工作者、医疗、法律等垂直领域的商业潜能。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">Why</div>
+                                    <div class="fact-content">企业级AI市场爆发，市场对AI应用开发人才需求激增，但教育内容供给严重不足。</div>
+                                </div>
+                            </div>
+                            <div class="impact-sidebar">
+                                <div class="impact-label">成都创业机会</div>
+                                <div class="impact-content">
+                                    成都可依托本地高校资源，打造AI教育产业园，培养本土化AI应用开发人才。
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collapsible collapsible-startup">
+                            <div class="collapsible-header">💡 创业灵感</div>
+                            <div class="collapsible-content">
+                                <div style="margin-bottom: 12px;"><strong>做什么：</strong>AI应用开发实战训练营</div>
+                                <div style="margin-bottom: 12px;"><strong>切入点：</strong>针对成都本地企业需求，提供AI应用开发实战培训</div>
+                                <div><strong>为什么现在：</strong>企业需求迫切，人才供给不足</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section s-teal">
+                <div class="section-header">
+                    <div class="section-icon">🎬</div>
+                    <div>
+                        <div class="section-label">VIDEO_INTELLIGENCE</div>
+                        <div class="section-title">视频赛道情报</div>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <div class="news-card">
+                        <div class="news-title">
+                            <a href="http://m.toutiao.com/group/7609503003619426843/" target="_blank">多模态AI大年到来，视频生成技术正在颠覆影视行业</a>
+                        </div>
+                        <div class="fact-grid">
+                            <div class="fact-col">
+                                <div class="fact-row">
+                                    <div class="fact-label">What</div>
+                                    <div class="fact-content">2026年被称为"AI多模态大年"，视频生成技术正在快速迭代，从Sora的精美视频到智能体的自主创作，视频行业正在经历前所未有的变革。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">How</div>
+                                    <div class="fact-content">AI不仅能生成视频内容，还能进行视频编辑、特效制作、音频同步等全流程工作。这大大降低了视频制作的门槛和成本。</div>
+                                </div>
+                                <div class="fact-row">
+                                    <div class="fact-label">Why</div>
+                                    <div class="fact-content">视频内容需求爆炸式增长，但传统制作方式成本高、周期长。AI视频生成技术正好解决了这一矛盾，开启了UGC视频的新时代。</div>
+                                </div>
+                            </div>
+                            <div class="impact-sidebar">
+                                <div class="impact-label">视频创业机会</div>
+                                <div class="impact-content">
+                                    可打造AI视频创作平台，帮助个人和中小企业快速制作高质量视频内容。
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collapsible collapsible-startup">
+                            <div class="collapsible-header">💡 创业灵感</div>
+                            <div class="collapsible-content">
+                                <div style="margin-bottom: 12px;"><strong>做什么：</strong>AI短视频创作SaaS平台</div>
+                                <div style="margin-bottom: 12px;"><strong>切入点：</strong>帮助中小企业快速制作营销短视频</div>
+                                <div><strong>为什么现在：</strong>技术成熟，需求爆发</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section s-pink">
+                <div class="section-header">
+                    <div class="section-icon">✨</div>
+                    <div>
+                        <div class="section-label">INSPIRATION_VAULT</div>
+                        <div class="section-title">灵感库</div>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <div style="padding: 16px 0;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+                            <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 20px;">
+                                <div style="font-weight: 600; margin-bottom: 8px;">Hugging Face Transformers 5.0</div>
+                                <div style="font-size: 14px; color: var(--text-dim);">新版本包含分布式训练改进和模型量化技术</div>
+                            </div>
+                            <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 20px;">
+                                <div style="font-weight: 600; margin-bottom: 8px;">DeepLearning.ai 实战课程</div>
+                                <div style="font-size: 14px; color: var(--text-dim);">Andrew Ng教授最新大模型应用实战课程</div>
+                            </div>
+                            <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 20px;">
+                                <div style="font-weight: 600; margin-bottom: 8px;">Entire 开发者平台</div>
+                                <div style="font-size: 14px; color: var(--text-dim);">前GitHub CEO打造的智能编码时代开源平台</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="footer">
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-num" style="color: var(--meta-purple);">9</div>
+                    <div class="stat-label">精选篇数</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num" style="color: var(--anchor-blue);">8</div>
+                    <div class="stat-label">涵盖板块</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num" style="color: var(--green);">22</div>
+                    <div class="stat-label">扫描信源</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num" style="color: var(--invest-deepblue);">7</div>
+                    <div class="stat-label">股票标的</div>
+                </div>
+            </div>
+            <div class="footer-summary">
+                <p>2026年2月23日 · 精选 9篇 / 扫描 50+篇 · 涵盖 22个信源 · 识别 7个股票标的</p>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <p>Generated by AI洋同学实验室 · AI Daily Intelligence</p>
+            <div class="watermark">AI DAILY</div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.collapsible-header').forEach(header => {
+            header.addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('.section-header').forEach(header => {
+            header.addEventListener('click', function() {
+                this.parentElement.classList.toggle('collapsed');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                if (index > 0) {
+                    section.classList.add('collapsed');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
